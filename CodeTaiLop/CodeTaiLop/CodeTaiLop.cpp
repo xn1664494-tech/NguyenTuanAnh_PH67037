@@ -43,11 +43,84 @@ void demoString() {
 	// pút(tenSinhVien
 
 }
+void thongTinMh() {
+	printf("Ban da chon chuc nang 1\n");
+	char tenMh[50];
+	char maMh[50];
+	int soTinChi;
+	printf("Nhap ten mon hoc:");
+	fgets(tenMh, sizeof(tenMh), stdin);
+	//scanf_s("%s", tenMh, sizeof(tenMh));
+	printf("Nhap ma mon hoc:");
+	//scanf_s("%s", maMh, sizeof(maMh));
+	fgets(maMh, sizeof(maMh), stdin);
+	printf("Nhap so tin chi: ");
+	scanf_s("%d", &soTinChi);
+	printf("Mon hoc: %s co ma mon %s co so tin chi %d\n", tenMh, maMh, soTinChi);
+	double tinChi = 0;
+	tinChi = 500000 * soTinChi;
+	printf("Hoc phi mon %s la: %.2lf\n", tenMh, tinChi);
+	
+
+}
+void tinhTongsole() {
+	printf("Ban da chon chuc nang 2\n");
+	int n;
+	printf("Nhap 1 so nguyen bat ky:\n");
+	scanf_s("%d", &n);
+	int tong = 0;
+	for (int i = 1; i < n; i++) {
+		tong = tong + i;
+		
+	}
+	printf(" Tong cac so tu 1 den %d la: %d\n", n, tong);
+	if (tong % 2 == 0) {
+		printf("So %d la so chan.\n", tong);
+	}
+	else {
+		printf("So %d la so le.\n", tong);
+	}
+
+
+
+}
+
+	
+void hamVongLap(int n) {
+	int luachon = 1;
+	while (luachon = 1) {
+		switch (n) {
+		case 1:
+			thongTinMh();
+			break;
+		case 2:
+			tinhTongsole();
+			break;
+		case 3:
+
+			break;
+		}
+		printf("Ban co muon tiep tuc khong? 1.Co 2.Khong");
+		scanf_s("%d", &luachon);
+	}
+
+		
+}
+
 
 int main()
 {
-	
-	demoString();
+	int n;
+	do {
+		printf("-----Menu-----\n");
+		printf("Moi ban chon chuc nang:\n");
+		printf("CN1: Thong tin mon hoc\n");
+		printf("CN2: Tinh tong so le\n");
+		printf("CN3: Thong tin diem lab\n");
+		printf("CN0: Thoat chuong trinh\n");
+		scanf_s("%d", &n);
+		hamVongLap(n);
+	} while (n != 0);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
